@@ -15,8 +15,8 @@ jobs:
     
     - name: PyInstaller Linux
       uses: JackMcKew/pyinstaller-action-linux@0.1.4
-        with:
-          spec: linux.spec
+      with:
+        spec: linux.spec
 
     - uses: actions/upload-artifact@v2
       with:
@@ -25,9 +25,9 @@ jobs:
 
     - name: Package Application
       uses: JackMcKew/pyinstaller-action-windows@main
-        with:
+      with:
         spec: windows.exe.spec
-        
+
     - uses: actions/upload-artifact@v2
       with:
         name: move-editor_exe
