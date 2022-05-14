@@ -15,7 +15,7 @@ jobs:
     
     - name: PyInstaller Linux
       uses: JackMcKew/pyinstaller-action-linux@0.1.4
-        with:
+      with:
           main: app.py
 
     - uses: actions/upload-artifact@v2
