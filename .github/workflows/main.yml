@@ -26,7 +26,8 @@ jobs:
     - name: Package Application
       uses: JackMcKew/pyinstaller-action-windows@main
         with:
-          spec: windows.exe.spec
+        spec: windows.exe.spec
+        
     - uses: actions/upload-artifact@v2
       with:
         name: move-editor_exe
