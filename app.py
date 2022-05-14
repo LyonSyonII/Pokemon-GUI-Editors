@@ -23,7 +23,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.connect_slots()
 
-        # Get root path based on type of executable
+        # Get root path based on type of executable 
         if getattr(sys, "frozen", False):
             self.root_path = Path(sys.executable).parent
         else:
