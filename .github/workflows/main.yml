@@ -21,7 +21,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: move-editor_linux
-        path: dist/linux/linux
+        path: src/dist/linux/
 
     - name: Package Application
       uses: JackMcKew/pyinstaller-action-windows@main
@@ -31,5 +31,5 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: move-editor_exe
-        path: dist/windows.exe/windows.exe
+        path: src/dist/windows/
 
