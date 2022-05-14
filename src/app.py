@@ -1,7 +1,7 @@
 import sys
 import os
 import re
-from typing import Any
+from typing import Any, Tuple
 from pathlib import Path
 
 import toml
@@ -12,40 +12,39 @@ from window import Ui_MainWindow
 def camel_to_spaces(text: str) -> str:
     return re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", text)
 
+
 class Window(QMainWindow, Ui_MainWindow):
     root_path: Path
     moves_path: Path
-    moves: dict[str, dict[str, Any]]
     moves_parse: dict[str, dict[str, dict[str, Any]]]
+    moves: dict[str, dict[str, Any]]
 
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.connect_slots()
 
-        # Get root path based on type of executable 
+        # Get root path based on type of executable
         if getattr(sys, "frozen", False):
             self.root_path = Path(sys.executable).parent
         else:
             self.root_path = Path(os.path.dirname(os.path.abspath(__file__)))
-
+        
         # If path does not exist, ask the user to select it
-        self.root_path = self.get_file_dir("moves.toml")
+        (self.root_path, self.moves_path) = self.get_file_path("moves.toml.bytes")
 
         # Load moves.toml
-        self.moves_path = self.root_path / "moves.toml.bytes"
         self.moves_parse = toml.load(self.moves_path)
         self.moves = self.moves_parse["Moves"]
 
         # Add existing moves to the "Name" entry
         self.name.addItems(map(camel_to_spaces, self.moves.keys()))
         # Add existing types to the "Type 1" and "Type 2" entries
-        types_path = self.get_file_dir("types.toml") / "types.toml.bytes"
-        types: None | dict[str, Any] = toml.load(types_path).get("Types")
-        if types:
+        types_path = self.get_file_path("types.toml.bytes")[1]
+        if types := toml.load(types_path).get("Types"):
             self.type1.addItems(types.keys())
             self.type2.addItems(types.keys())
-
+    
     def connect_slots(self):
         self.name.currentTextChanged.connect(self.name_changed)
         self.type1.currentTextChanged.connect(self.type1_changed)
@@ -59,8 +58,8 @@ class Window(QMainWindow, Ui_MainWindow):
 
     def name_changed(self):
         text = self.name.currentText().title()
-        move = self.moves.get(text.replace(" ", ""))
-        if move:
+        # If move is found in dictionary
+        if move := self.moves.get(text.replace(" ", "")):
             text = camel_to_spaces(text)
             self.type1.setCurrentText(move["type1"])
             self.type2.setCurrentText(move["type2"])
@@ -95,14 +94,14 @@ class Window(QMainWindow, Ui_MainWindow):
 
     def accuracy_changed(self):
         value = self.accuracy.value()
-
+    
     def pp_changed(self):
         value = self.pp.value()
 
     def save_move(self):
         # Get move flags mask
         flags = (
-            self.flag_a.isChecked() * 1
+              self.flag_a.isChecked()
             + self.flag_b.isChecked() * 2
             + self.flag_c.isChecked() * 4
             + self.flag_d.isChecked() * 8
@@ -111,7 +110,6 @@ class Window(QMainWindow, Ui_MainWindow):
             + self.flag_g.isChecked() * 64
             + self.flag_h.isChecked() * 128
         )
-
         # Update move definition (if it does not exist it will be created)
         self.moves.update(
             {
@@ -132,24 +130,23 @@ class Window(QMainWindow, Ui_MainWindow):
         )
         # Save move to file
         with open(self.moves_path, "w", encoding="utf-8") as file:
-            dump = toml.dumps(self.moves_parse)
-            file.write(dump)
+            print(toml.dump(self.moves_parse, file))
             file.close()
-            print(dump)
-    
-    def get_file_dir(self, file_name: str) -> Path:
-        path = self.root_path/f"{file_name}.bytes"
-        while not path.exists():
+
+    def get_file_path(self, file_name: str) -> Tuple[Path, Path]:
+        path = self.root_path / file_name
+        
+        if not path.exists():
             # Ask the user to select the moves.toml file
-            path_s = QFileDialog.getOpenFileName(
-                caption=f"Select {file_name}", filter=f"{file_name}.bytes"
+            selected: str = QFileDialog.getOpenFileName(
+                caption=f"Select {file_name}", filter=file_name
             )[0]
             # If returned path is null, stop the program
-            if not path_s:
+            if not selected:
                 self.close()
                 sys.exit()
-            path = Path(path_s)
-        return path.parent
+            path = Path(selected)
+        return (path.parent, path)
 
 
 if __name__ == "__main__":

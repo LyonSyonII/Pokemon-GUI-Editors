@@ -23,7 +23,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.ATitle = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.ATitle.sizePolicy().hasHeightForWidth())
@@ -36,7 +38,9 @@ class Ui_MainWindow(object):
         self.ATitle.setObjectName("ATitle")
         self.verticalLayout_2.addWidget(self.ATitle)
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget.sizePolicy().hasHeightForWidth())
@@ -48,11 +52,13 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.widget)
         self.label_2.setMinimumSize(QtCore.QSize(0, 22))
         self.label_2.setMaximumSize(QtCore.QSize(16777215, 22))
-        self.label_2.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.label_2.setAlignment(QtCore.Qt.AlignBottom | QtCore.Qt.AlignHCenter)
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 3, 0, 1, 1)
         self.type2 = QtWidgets.QComboBox(self.widget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.type2.sizePolicy().hasHeightForWidth())
@@ -64,11 +70,13 @@ class Ui_MainWindow(object):
         self.label_5 = QtWidgets.QLabel(self.widget)
         self.label_5.setMinimumSize(QtCore.QSize(0, 22))
         self.label_5.setMaximumSize(QtCore.QSize(16777215, 22))
-        self.label_5.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.label_5.setAlignment(QtCore.Qt.AlignBottom | QtCore.Qt.AlignHCenter)
         self.label_5.setObjectName("label_5")
         self.gridLayout.addWidget(self.label_5, 3, 2, 1, 1)
         self.type1 = QtWidgets.QComboBox(self.widget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.type1.sizePolicy().hasHeightForWidth())
@@ -77,7 +85,9 @@ class Ui_MainWindow(object):
         self.type1.setObjectName("type1")
         self.gridLayout.addWidget(self.type1, 4, 0, 1, 1)
         self.accuracy = QtWidgets.QSpinBox(self.widget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.accuracy.sizePolicy().hasHeightForWidth())
@@ -108,23 +118,25 @@ class Ui_MainWindow(object):
         self.label_4 = QtWidgets.QLabel(self.widget)
         self.label_4.setMinimumSize(QtCore.QSize(0, 22))
         self.label_4.setMaximumSize(QtCore.QSize(16777215, 22))
-        self.label_4.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.label_4.setAlignment(QtCore.Qt.AlignBottom | QtCore.Qt.AlignHCenter)
         self.label_4.setObjectName("label_4")
         self.gridLayout.addWidget(self.label_4, 3, 1, 1, 1)
         self.label_7 = QtWidgets.QLabel(self.widget)
         self.label_7.setMinimumSize(QtCore.QSize(0, 22))
         self.label_7.setMaximumSize(QtCore.QSize(16777215, 22))
-        self.label_7.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.label_7.setAlignment(QtCore.Qt.AlignBottom | QtCore.Qt.AlignHCenter)
         self.label_7.setObjectName("label_7")
         self.gridLayout.addWidget(self.label_7, 3, 3, 1, 1)
         self.label = QtWidgets.QLabel(self.widget)
         self.label.setMinimumSize(QtCore.QSize(0, 22))
         self.label.setMaximumSize(QtCore.QSize(16777215, 22))
-        self.label.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.label.setAlignment(QtCore.Qt.AlignBottom | QtCore.Qt.AlignHCenter)
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 5, 2, 1, 1)
         self.category = QtWidgets.QComboBox(self.widget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.category.sizePolicy().hasHeightForWidth())
@@ -143,7 +155,9 @@ class Ui_MainWindow(object):
         self.target.addItem("")
         self.gridLayout.addWidget(self.target, 6, 0, 1, 1)
         self.priority = QtWidgets.QSpinBox(self.widget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.priority.sizePolicy().hasHeightForWidth())
@@ -154,7 +168,9 @@ class Ui_MainWindow(object):
         self.priority.setObjectName("priority")
         self.gridLayout.addWidget(self.priority, 6, 1, 1, 1)
         self.power = QtWidgets.QSpinBox(self.widget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.power.sizePolicy().hasHeightForWidth())
@@ -168,11 +184,13 @@ class Ui_MainWindow(object):
         self.label_6 = QtWidgets.QLabel(self.widget)
         self.label_6.setMinimumSize(QtCore.QSize(0, 22))
         self.label_6.setMaximumSize(QtCore.QSize(16777215, 22))
-        self.label_6.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
+        self.label_6.setAlignment(QtCore.Qt.AlignBottom | QtCore.Qt.AlignHCenter)
         self.label_6.setObjectName("label_6")
         self.gridLayout.addWidget(self.label_6, 5, 3, 1, 1)
         self.pp = QtWidgets.QSpinBox(self.widget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pp.sizePolicy().hasHeightForWidth())
@@ -194,11 +212,13 @@ class Ui_MainWindow(object):
         self.flagsBox = QtWidgets.QGroupBox(self.widget_2)
         self.flagsBox.setMaximumSize(QtCore.QSize(151, 397))
         self.flagsBox.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.flagsBox.setStyleSheet("QGroupBox::title {\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center; \n"
-"}")
-        self.flagsBox.setAlignment(QtCore.Qt.AlignJustify|QtCore.Qt.AlignTop)
+        self.flagsBox.setStyleSheet(
+            "QGroupBox::title {\n"
+            "    subcontrol-origin: margin;\n"
+            "    subcontrol-position: top center; \n"
+            "}"
+        )
+        self.flagsBox.setAlignment(QtCore.Qt.AlignJustify | QtCore.Qt.AlignTop)
         self.flagsBox.setObjectName("flagsBox")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.flagsBox)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -271,10 +291,12 @@ class Ui_MainWindow(object):
         self.groupBox_2 = QtWidgets.QGroupBox(self.widget_2)
         self.groupBox_2.setMaximumSize(QtCore.QSize(258, 16777215))
         self.groupBox_2.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.groupBox_2.setStyleSheet("QGroupBox::title {\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center; \n"
-"}")
+        self.groupBox_2.setStyleSheet(
+            "QGroupBox::title {\n"
+            "    subcontrol-origin: margin;\n"
+            "    subcontrol-position: top center; \n"
+            "}"
+        )
         self.groupBox_2.setAlignment(QtCore.Qt.AlignCenter)
         self.groupBox_2.setFlat(True)
         self.groupBox_2.setObjectName("groupBox_2")
@@ -290,7 +312,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.groupBox_2)
         self.verticalLayout_2.addWidget(self.widget_2, 0, QtCore.Qt.AlignHCenter)
         self.widget1 = QtWidgets.QWidget(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget1.sizePolicy().hasHeightForWidth())
@@ -346,10 +370,18 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.ATitle.setText(_translate("MainWindow", "Move Editor"))
         self.label_2.setText(_translate("MainWindow", "Type 1"))
-        self.type2.setToolTip(_translate("MainWindow", "<html><head/><body><p>First Type</p></body></html>"))
+        self.type2.setToolTip(
+            _translate(
+                "MainWindow", "<html><head/><body><p>First Type</p></body></html>"
+            )
+        )
         self.type2.setPlaceholderText(_translate("MainWindow", "None"))
         self.label_5.setText(_translate("MainWindow", "Category"))
-        self.type1.setToolTip(_translate("MainWindow", "<html><head/><body><p>First Type</p></body></html>"))
+        self.type1.setToolTip(
+            _translate(
+                "MainWindow", "<html><head/><body><p>First Type</p></body></html>"
+            )
+        )
         self.type1.setPlaceholderText(_translate("MainWindow", "None"))
         self.accuracy.setSuffix(_translate("MainWindow", "%"))
         self.name.setPlaceholderText(_translate("MainWindow", "Name"))

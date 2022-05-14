@@ -20,7 +20,7 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: move-editor_linux
+        name: move-editor.linux
         path: src/dist/linux/
 
     - name: Package Application
@@ -30,6 +30,6 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: move-editor_exe
+        name: move-editor.exe
         path: src/dist/windows/
 
