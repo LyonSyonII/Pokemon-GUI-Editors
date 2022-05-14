@@ -17,7 +17,6 @@ jobs:
       uses: JackMcKew/pyinstaller-action-linux@0.1.4
       with:
         spec: linux.spec
-        path: /
 
     - uses: actions/upload-artifact@v2
       with:
@@ -28,7 +27,6 @@ jobs:
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
         spec: windows.exe.spec
-        path: /
 
     - uses: actions/upload-artifact@v2
       with:
