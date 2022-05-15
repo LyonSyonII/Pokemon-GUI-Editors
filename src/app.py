@@ -35,6 +35,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
         # Load moves.toml
         self.moves_parse = toml.load(self.moves_path)
+        self.moves_parse.setdefault("Moves", {})
         self.moves = self.moves_parse["Moves"]
 
         # Add existing moves to the "Name" entry
@@ -135,7 +136,6 @@ class Window(QMainWindow, Ui_MainWindow):
 
     def get_file_path(self, file_name: str) -> Tuple[Path, Path]:
         path = self.root_path / file_name
-        
         if not path.exists():
             # Ask the user to select the moves.toml file
             selected: str = QFileDialog.getOpenFileName(
