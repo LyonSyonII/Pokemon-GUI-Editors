@@ -29,7 +29,7 @@ class Window(QMainWindow, Ui_MainWindow):
             self.root_path = Path(sys.executable).parent
         else:
             self.root_path = Path(dirname(abspath(__file__)))
-        
+
         # If path does not exist, ask the user to select it
         (self.root_path, self.moves_path) = self.get_file_path("moves.toml.bytes")
 
@@ -45,7 +45,7 @@ class Window(QMainWindow, Ui_MainWindow):
         if types := toml.load(types_path).get("Types"):
             self.type1.addItems(types.keys())
             self.type2.addItems(types.keys())
-    
+
     def connect_slots(self):
         self.name.currentTextChanged.connect(self.name_changed)
         self.type1.currentTextChanged.connect(self.type1_changed)
@@ -95,14 +95,14 @@ class Window(QMainWindow, Ui_MainWindow):
 
     def accuracy_changed(self):
         value = self.accuracy.value()
-    
+
     def pp_changed(self):
         value = self.pp.value()
 
     def save_move(self):
         # Get move flags mask
         flags = (
-              self.flag_a.isChecked()
+            self.flag_a.isChecked()
             + self.flag_b.isChecked() * 2
             + self.flag_c.isChecked() * 4
             + self.flag_d.isChecked() * 8
