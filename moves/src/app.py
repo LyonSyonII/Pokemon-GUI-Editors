@@ -1,5 +1,5 @@
 import sys
-from re import sub
+import re
 from os.path import dirname, abspath
 from typing import Any, Tuple
 from pathlib import Path
@@ -10,7 +10,7 @@ from window import Ui_MainWindow
 
 
 def camel_to_spaces(text: str) -> str:
-    return sub(r"([a-z0-9])([A-Z])", r"\1 \2", text)
+    return re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", text)
 
 
 class Window(QMainWindow, Ui_MainWindow):
