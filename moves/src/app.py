@@ -1,6 +1,6 @@
 import sys
-import os
-import re
+from re import sub
+from os.path import dirname, abspath
 from typing import Any, Tuple
 from pathlib import Path
 
@@ -10,7 +10,7 @@ from window import Ui_MainWindow
 
 
 def camel_to_spaces(text: str) -> str:
-    return re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", text)
+    return sub(r"([a-z0-9])([A-Z])", r"\1 \2", text)
 
 
 class Window(QMainWindow, Ui_MainWindow):
@@ -28,7 +28,7 @@ class Window(QMainWindow, Ui_MainWindow):
         if getattr(sys, "frozen", False):
             self.root_path = Path(sys.executable).parent
         else:
-            self.root_path = Path(os.path.dirname(os.path.abspath(__file__)))
+            self.root_path = Path(dirname(abspath(__file__)))
         
         # If path does not exist, ask the user to select it
         (self.root_path, self.moves_path) = self.get_file_path("moves.toml.bytes")

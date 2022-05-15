@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#! /bin/fish
 # Build moves
 pyinstaller -F -n moves_editor moves/src/app.py &
 wineconsole pyinstaller -F -n moves_editor.exe moves/src/app.py &
