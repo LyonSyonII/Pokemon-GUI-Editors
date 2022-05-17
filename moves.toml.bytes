@@ -1,0 +1,12 @@
+[Moves.Tackle]
+name = "Tackle"
+type1 = "Normal"
+type2 = "None"
+category = "Physical"
+power = 50
+accuracy = 100
+pp = 32
+target = "AnyFoe"
+priority = 0
+flags = 1
+description = ""

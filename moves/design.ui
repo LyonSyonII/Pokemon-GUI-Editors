@@ -6,17 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>376</width>
-    <height>697</height>
+    <width>841</width>
+    <height>761</height>
    </rect>
   </property>
   <property name="minimumSize">
-   <size>
-    <width>376</width>
-    <height>697</height>
-   </size>
-  </property>
-  <property name="maximumSize">
    <size>
     <width>376</width>
     <height>697</height>
@@ -29,714 +23,862 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QVBoxLayout" name="verticalLayout_12">
     <item>
-     <widget class="QLabel" name="ATitle">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>Neo Euler</family>
-        <pointsize>25</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Move Editor</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignHCenter">
      <widget class="QWidget" name="widget" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>370</height>
+       </size>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Type 1</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QComboBox" name="type2">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="ATitle">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;First Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="currentIndex">
-          <number>-1</number>
-         </property>
-         <property name="placeholderText">
-          <string>None</string>
-         </property>
-         <property name="duplicatesEnabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QLabel" name="label_5">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>22</height>
-          </size>
-         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>22</height>
+           <height>50</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Neo Euler</family>
+           <pointsize>25</pointsize>
+          </font>
          </property>
          <property name="text">
-          <string>Category</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QComboBox" name="type1">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;First Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="currentIndex">
-          <number>-1</number>
-         </property>
-         <property name="placeholderText">
-          <string>None</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="3">
-        <widget class="QSpinBox" name="accuracy">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="suffix">
-          <string>%</string>
-         </property>
-         <property name="maximum">
-          <number>100</number>
-         </property>
-         <property name="singleStep">
-          <number>10</number>
-         </property>
-         <property name="value">
-          <number>100</number>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="6">
-        <widget class="QComboBox" name="name">
-         <property name="minimumSize">
-          <size>
-           <width>150</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="editable">
-          <bool>true</bool>
-         </property>
-         <property name="placeholderText">
-          <string>Name</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_9">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Target</string>
+          <string>Move Editor</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QLabel" name="label_10">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Priority</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLabel" name="label_4">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Type 2</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QLabel" name="label_7">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Accuracy</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLabel" name="label">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Power</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QComboBox" name="category">
+       <item>
+        <widget class="QWidget" name="fields" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>32</height>
-          </size>
-         </property>
-         <item>
-          <property name="text">
-           <string>Physical</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Special</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Status</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QComboBox" name="target">
-         <property name="minimumSize">
-          <size>
-           <width>100</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="currentIndex">
-          <number>2</number>
-         </property>
-         <item>
-          <property name="text">
-           <string>Automatic</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>UserOrAlly</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>AnyFoe</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QSpinBox" name="priority">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>-6</number>
-         </property>
-         <property name="maximum">
-          <number>6</number>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QSpinBox" name="power">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimum">
-          <number>0</number>
-         </property>
-         <property name="maximum">
-          <number>1000</number>
-         </property>
-         <property name="singleStep">
-          <number>10</number>
-         </property>
-         <property name="value">
-          <number>70</number>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="3">
-        <widget class="QLabel" name="label_6">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>PP</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="3">
-        <widget class="QSpinBox" name="pp">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="value">
-          <number>10</number>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="4">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Name</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="2">
+           <widget class="QSplitter" name="splitter_9">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label_5">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Category</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="combo_category">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QComboBox::AdjustToContents</enum>
+             </property>
+             <item>
+              <property name="text">
+               <string>Physical</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Special</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Status</string>
+              </property>
+             </item>
+            </widget>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QSplitter" name="splitter_7">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label_6">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>PP</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spin_pp">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="4">
+           <widget class="QSplitter" name="splitter_3">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label_3">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Name</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="combo_name">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="editable">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Name</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSplitter" name="splitter">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label_4">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Type 2</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="combo_type2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;First Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="currentIndex">
+              <number>-1</number>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QComboBox::AdjustToContents</enum>
+             </property>
+             <property name="placeholderText">
+              <string>None</string>
+             </property>
+             <property name="duplicatesEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QSplitter" name="splitter_4">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label_9">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Target</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="combo_target">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="currentIndex">
+              <number>2</number>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QComboBox::AdjustToContents</enum>
+             </property>
+             <item>
+              <property name="text">
+               <string>Automatic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>UserOrAlly</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>AnyFoe</string>
+              </property>
+             </item>
+            </widget>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSplitter" name="splitter_5">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label_10">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Priority</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spin_priority">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="minimum">
+              <number>-6</number>
+             </property>
+             <property name="maximum">
+              <number>6</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QSplitter" name="splitter_2">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label_2">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Type 1</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="combo_type1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;First Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="currentIndex">
+              <number>-1</number>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QComboBox::AdjustToContents</enum>
+             </property>
+             <property name="placeholderText">
+              <string>None</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QSplitter" name="splitter_6">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Power</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spin_power">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+             <property name="singleStep">
+              <number>10</number>
+             </property>
+             <property name="value">
+              <number>70</number>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QSplitter" name="splitter_8">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>73</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <widget class="QLabel" name="label_7">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Accuracy</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+             </property>
+            </widget>
+            <widget class="QSpinBox" name="spin_accuracy">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="suffix">
+              <string>%</string>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="singleStep">
+              <number>10</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
      </widget>
     </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QWidget" name="widget_2" native="true">
-      <property name="maximumSize">
-       <size>
-        <width>413</width>
-        <height>399</height>
-       </size>
-      </property>
+    <item>
+     <widget class="QWidget" name="flagsdescr" native="true">
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QGroupBox" name="flagsBox">
-         <property name="maximumSize">
-          <size>
-           <width>151</width>
-           <height>397</height>
-          </size>
+        <widget class="QSplitter" name="splitter_10">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
-         <property name="layoutDirection">
-          <enum>Qt::RightToLeft</enum>
+         <property name="opaqueResize">
+          <bool>false</bool>
          </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox::title {
+         <widget class="QGroupBox" name="flagsBox">
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox::title {
+    subcontrol-origin: padding;
+    left: 30px;
+    subcontrol-position: top left; 
+}</string>
+          </property>
+          <property name="title">
+           <string>Flags</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QCheckBox" name="check_flag_a">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Contact</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_b">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Bypasses Protect</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_c">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Status Only</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_d">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Buff/Debuf</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_e">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Removes Frozen</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_f">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>High Critical Rate</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_g">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Bite Move</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_h">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Punch Move</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_i">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Sound Move</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_j">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Powder Move</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_k">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Pulse Move</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_l">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Bullet Move</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="check_flag_m">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Dance Move</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox::title {
     subcontrol-origin: margin;
     subcontrol-position: top center; 
 }</string>
-         </property>
-         <property name="title">
-          <string>Flags</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignJustify|Qt::AlignTop</set>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="QCheckBox" name="flag_a">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Contact</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_b">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Bypasses Protect</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_c">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Status Only</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_d">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Buff/Debuf</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_e">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Removes Frozen</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_f">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>High Critical Rate</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_g">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Bite Move</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_h">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Punch Move</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_i">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Sound Move</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_j">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Powder Move</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_k">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Pulse Move</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_l">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Bullet Move</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="flag_m">
-            <property name="layoutDirection">
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text">
-             <string>Dance Move</string>
-            </property>
-            <property name="tristate">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox_2">
-         <property name="maximumSize">
-          <size>
-           <width>258</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QGroupBox::title {
-    subcontrol-origin: margin;
-    subcontrol-position: top center; 
-}</string>
-         </property>
-         <property name="title">
-          <string>Description</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_2">
-          <property name="leftMargin">
-           <number>0</number>
           </property>
-          <property name="topMargin">
-           <number>0</number>
+          <property name="title">
+           <string>Description</string>
           </property>
-          <property name="rightMargin">
-           <number>0</number>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
-          <property name="bottomMargin">
-           <number>0</number>
+          <property name="flat">
+           <bool>true</bool>
           </property>
-          <item row="0" column="0">
-           <widget class="QTextEdit" name="description">
-            <property name="maximumSize">
-             <size>
-              <width>620</width>
-              <height>371</height>
-             </size>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="placeholderText">
-             <string/>
-            </property>
-           </widget>
-          </item>
-         </layout>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QTextEdit" name="txtedit_description">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
      </widget>
     </item>
     <item alignment="Qt::AlignHCenter">
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="QWidget" name="saveclose" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -757,7 +899,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QPushButton" name="cancel">
+        <widget class="QPushButton" name="button_cancel">
          <property name="maximumSize">
           <size>
            <width>91</width>
@@ -770,7 +912,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="save">
+        <widget class="QPushButton" name="button_save">
          <property name="maximumSize">
           <size>
            <width>91</width>
@@ -789,31 +931,29 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>name</tabstop>
-  <tabstop>type1</tabstop>
-  <tabstop>type2</tabstop>
-  <tabstop>category</tabstop>
-  <tabstop>accuracy</tabstop>
-  <tabstop>target</tabstop>
-  <tabstop>priority</tabstop>
-  <tabstop>power</tabstop>
-  <tabstop>pp</tabstop>
-  <tabstop>flag_a</tabstop>
-  <tabstop>flag_b</tabstop>
-  <tabstop>flag_c</tabstop>
-  <tabstop>flag_d</tabstop>
-  <tabstop>flag_e</tabstop>
-  <tabstop>flag_f</tabstop>
-  <tabstop>flag_g</tabstop>
-  <tabstop>flag_h</tabstop>
-  <tabstop>flag_i</tabstop>
-  <tabstop>flag_j</tabstop>
-  <tabstop>flag_k</tabstop>
-  <tabstop>flag_l</tabstop>
-  <tabstop>flag_m</tabstop>
-  <tabstop>description</tabstop>
-  <tabstop>cancel</tabstop>
-  <tabstop>save</tabstop>
+  <tabstop>combo_type2</tabstop>
+  <tabstop>combo_category</tabstop>
+  <tabstop>spin_accuracy</tabstop>
+  <tabstop>combo_target</tabstop>
+  <tabstop>spin_priority</tabstop>
+  <tabstop>spin_power</tabstop>
+  <tabstop>spin_pp</tabstop>
+  <tabstop>check_flag_a</tabstop>
+  <tabstop>check_flag_b</tabstop>
+  <tabstop>check_flag_c</tabstop>
+  <tabstop>check_flag_d</tabstop>
+  <tabstop>check_flag_e</tabstop>
+  <tabstop>check_flag_f</tabstop>
+  <tabstop>check_flag_g</tabstop>
+  <tabstop>check_flag_h</tabstop>
+  <tabstop>check_flag_i</tabstop>
+  <tabstop>check_flag_j</tabstop>
+  <tabstop>check_flag_k</tabstop>
+  <tabstop>check_flag_l</tabstop>
+  <tabstop>check_flag_m</tabstop>
+  <tabstop>txtedit_description</tabstop>
+  <tabstop>button_cancel</tabstop>
+  <tabstop>button_save</tabstop>
  </tabstops>
  <resources/>
  <connections/>

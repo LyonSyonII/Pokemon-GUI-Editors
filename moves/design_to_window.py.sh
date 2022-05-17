@@ -1,3 +1,3 @@
 # /usr/bin/bash
-pyuic5 -o window.py design.ui
+pyside6-uic design.ui > src/window.py
 echo "done!"
