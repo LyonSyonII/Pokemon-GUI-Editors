@@ -45,6 +45,7 @@ from PySide6.QtWidgets import (
     QAbstractScrollArea,
     QApplication,
     QComboBox,
+    QDoubleSpinBox,
     QGridLayout,
     QHBoxLayout,
     QHeaderView,
@@ -54,6 +55,7 @@ from PySide6.QtWidgets import (
     QSizePolicy,
     QSpinBox,
     QTabWidget,
+    QTextEdit,
     QTreeWidget,
     QTreeWidgetItem,
     QVBoxLayout,
@@ -65,7 +67,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(977, 641)
+        MainWindow.resize(1057, 699)
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -210,7 +212,7 @@ class Ui_MainWindow(object):
             self.combo_ability1.sizePolicy().hasHeightForWidth()
         )
         self.combo_ability1.setSizePolicy(sizePolicy1)
-        self.combo_ability1.setMinimumSize(QSize(0, 32))
+        self.combo_ability1.setMinimumSize(QSize(150, 32))
         self.combo_ability1.setEditable(True)
         self.combo_ability1.setInsertPolicy(QComboBox.NoInsert)
         self.combo_ability1.setSizeAdjustPolicy(QComboBox.AdjustToContents)
@@ -238,7 +240,7 @@ class Ui_MainWindow(object):
             self.combo_ability2.sizePolicy().hasHeightForWidth()
         )
         self.combo_ability2.setSizePolicy(sizePolicy1)
-        self.combo_ability2.setMinimumSize(QSize(0, 32))
+        self.combo_ability2.setMinimumSize(QSize(150, 32))
         self.combo_ability2.setEditable(True)
         self.combo_ability2.setInsertPolicy(QComboBox.NoInsert)
         self.combo_ability2.setSizeAdjustPolicy(QComboBox.AdjustToContents)
@@ -267,7 +269,7 @@ class Ui_MainWindow(object):
             self.combo_ability3.sizePolicy().hasHeightForWidth()
         )
         self.combo_ability3.setSizePolicy(sizePolicy1)
-        self.combo_ability3.setMinimumSize(QSize(0, 32))
+        self.combo_ability3.setMinimumSize(QSize(150, 32))
         self.combo_ability3.setEditable(True)
         self.combo_ability3.setInsertPolicy(QComboBox.NoInsert)
         self.combo_ability3.setSizeAdjustPolicy(QComboBox.AdjustToContents)
@@ -313,7 +315,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.addWidget(self.z_label_9)
 
         self.spin_def = QSpinBox(self.widget6)
-        self.spin_def.setObjectName("spin_defense")
+        self.spin_def.setObjectName("spin_def")
         self.spin_def.setAlignment(Qt.AlignCenter)
         self.spin_def.setMinimum(1)
         self.spin_def.setMaximum(255)
@@ -495,6 +497,119 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_evolutions, "")
         self.tab_misc = QWidget()
         self.tab_misc.setObjectName("tab_misc")
+        self.gridLayout_2 = QGridLayout(self.tab_misc)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.label_5 = QLabel(self.tab_misc)
+        self.label_5.setObjectName("label_5")
+        self.label_5.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_5, 4, 2, 1, 1)
+
+        self.spin_pokedex = QSpinBox(self.tab_misc)
+        self.spin_pokedex.setObjectName("spin_pokedex")
+        self.spin_pokedex.setAlignment(Qt.AlignCenter)
+        self.spin_pokedex.setAccelerated(True)
+        self.spin_pokedex.setMaximum(9999)
+        self.spin_pokedex.setValue(0)
+
+        self.gridLayout_2.addWidget(self.spin_pokedex, 5, 0, 1, 1)
+
+        self.label_6 = QLabel(self.tab_misc)
+        self.label_6.setObjectName("label_6")
+        self.label_6.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_6, 4, 1, 1, 1)
+
+        self.verticalLayout_16 = QVBoxLayout()
+        self.verticalLayout_16.setObjectName("verticalLayout_16")
+        self.label_2 = QLabel(self.tab_misc)
+        self.label_2.setObjectName("label_2")
+        self.label_2.setMaximumSize(QSize(16777215, 22))
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_16.addWidget(self.label_2)
+
+        self.spin_gender = QSpinBox(self.tab_misc)
+        self.spin_gender.setObjectName("spin_gender")
+        self.spin_gender.setAlignment(Qt.AlignCenter)
+        self.spin_gender.setMaximum(100)
+        self.spin_gender.setValue(50)
+
+        self.verticalLayout_16.addWidget(self.spin_gender)
+
+        self.gridLayout_2.addLayout(self.verticalLayout_16, 0, 1, 1, 1)
+
+        self.label_4 = QLabel(self.tab_misc)
+        self.label_4.setObjectName("label_4")
+        self.label_4.setMaximumSize(QSize(16777215, 22))
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_4, 4, 0, 1, 1)
+
+        self.verticalLayout_17 = QVBoxLayout()
+        self.verticalLayout_17.setObjectName("verticalLayout_17")
+        self.label_3 = QLabel(self.tab_misc)
+        self.label_3.setObjectName("label_3")
+        self.label_3.setMaximumSize(QSize(16777215, 22))
+        self.label_3.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_17.addWidget(self.label_3)
+
+        self.spin_xp = QSpinBox(self.tab_misc)
+        self.spin_xp.setObjectName("spin_xp")
+        self.spin_xp.setAlignment(Qt.AlignCenter)
+        self.spin_xp.setMaximum(100)
+        self.spin_xp.setValue(30)
+
+        self.verticalLayout_17.addWidget(self.spin_xp)
+
+        self.gridLayout_2.addLayout(self.verticalLayout_17, 0, 2, 1, 1)
+
+        self.text_description = QTextEdit(self.tab_misc)
+        self.text_description.setObjectName("text_description")
+
+        self.gridLayout_2.addWidget(self.text_description, 6, 0, 1, 3)
+
+        self.widget = QWidget(self.tab_misc)
+        self.widget.setObjectName("widget")
+        self.widget.setMaximumSize(QSize(16777215, 80))
+        self.verticalLayout_15 = QVBoxLayout(self.widget)
+        self.verticalLayout_15.setObjectName("verticalLayout_15")
+        self.label = QLabel(self.widget)
+        self.label.setObjectName("label")
+        self.label.setMaximumSize(QSize(16777215, 22))
+        self.label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_15.addWidget(self.label)
+
+        self.spin_growth = QSpinBox(self.widget)
+        self.spin_growth.setObjectName("spin_growth")
+        self.spin_growth.setAlignment(Qt.AlignCenter)
+        self.spin_growth.setMaximum(100)
+        self.spin_growth.setValue(100)
+
+        self.verticalLayout_15.addWidget(self.spin_growth)
+
+        self.gridLayout_2.addWidget(self.widget, 0, 0, 1, 1)
+
+        self.spin_weight = QDoubleSpinBox(self.tab_misc)
+        self.spin_weight.setObjectName("spin_weight")
+        self.spin_weight.setAlignment(Qt.AlignCenter)
+        self.spin_weight.setAccelerated(True)
+        self.spin_weight.setDecimals(1)
+        self.spin_weight.setMaximum(9999999.000000000000000)
+
+        self.gridLayout_2.addWidget(self.spin_weight, 5, 1, 1, 1)
+
+        self.spin_height = QDoubleSpinBox(self.tab_misc)
+        self.spin_height.setObjectName("spin_height")
+        self.spin_height.setAlignment(Qt.AlignCenter)
+        self.spin_height.setAccelerated(True)
+        self.spin_height.setDecimals(1)
+        self.spin_height.setMaximum(99999999.000000000000000)
+
+        self.gridLayout_2.addWidget(self.spin_height, 5, 2, 1, 1)
+
         self.tabWidget.addTab(self.tab_misc, "")
 
         self.horizontalLayout.addWidget(self.tabWidget)
@@ -544,7 +659,7 @@ class Ui_MainWindow(object):
         self.combo_ability1.setCurrentIndex(-1)
         self.combo_ability2.setCurrentIndex(-1)
         self.combo_ability3.setCurrentIndex(-1)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(2)
 
         QMetaObject.connectSlotsByName(MainWindow)
 
@@ -667,6 +782,26 @@ class Ui_MainWindow(object):
             self.tabWidget.indexOf(self.tab_evolutions),
             QCoreApplication.translate("MainWindow", "Evolutions", None),
         )
+        self.label_5.setText(QCoreApplication.translate("MainWindow", "Height", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", "Weight", None))
+        self.label_2.setText(
+            QCoreApplication.translate("MainWindow", "Gender Rate", None)
+        )
+        self.spin_gender.setSuffix(QCoreApplication.translate("MainWindow", "%", None))
+        self.spin_gender.setPrefix("")
+        self.label_4.setText(
+            QCoreApplication.translate("MainWindow", "Pok\u00e9dex", None)
+        )
+        self.label_3.setText(QCoreApplication.translate("MainWindow", "Base XP", None))
+        self.spin_xp.setSuffix("")
+        self.spin_xp.setPrefix("")
+        self.label.setText(
+            QCoreApplication.translate("MainWindow", "Growth Rate", None)
+        )
+        self.spin_growth.setSuffix(QCoreApplication.translate("MainWindow", "%", None))
+        self.spin_growth.setPrefix("")
+        self.spin_weight.setSuffix(QCoreApplication.translate("MainWindow", "kg", None))
+        self.spin_height.setSuffix(QCoreApplication.translate("MainWindow", "m", None))
         self.tabWidget.setTabText(
             self.tabWidget.indexOf(self.tab_misc),
             QCoreApplication.translate("MainWindow", "Misc", None),

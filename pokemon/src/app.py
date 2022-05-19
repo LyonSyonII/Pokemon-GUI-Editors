@@ -39,7 +39,6 @@ class ComboBox(QComboBox, QWidget):
 class Window(QMainWindow, Ui_MainWindow):
     root_path: Path
     pkm_path: Path
-    pkm_parse: dict[str, dict[str, dict[str, Any]]]
     pkm: dict[str, dict[str, Any]]
     pkm_items: Sequence[str]
     move_items: Sequence[str]
@@ -60,9 +59,7 @@ class Window(QMainWindow, Ui_MainWindow):
         (self.root_path, self.pkm_path) = self.get_file_path("pokemon.toml.bytes")
 
         # Load pokemon.toml
-        self.pkm_parse = self.load_toml(self.pkm_path)
-        self.pkm_parse.setdefault("Pokemon", {})
-        self.pkm = self.pkm_parse["Pokemon"]
+        self.pkm = self.load_toml(self.pkm_path)
 
         # Add existing Pokemon to the "Name" entry
         self.pkm_items = list(map(under_to_space, self.pkm.keys()))
@@ -296,9 +293,9 @@ class Window(QMainWindow, Ui_MainWindow):
             }
         )
         # Save Pokemon to file
-        print(toml_w.dumps(self.pkm_parse))
+        print(toml_w.dumps(self.pkm))
         with open(self.pkm_path, "wb") as file:
-            toml_w.dump(self.pkm_parse, file)
+            toml_w.dump(self.pkm, file)
             file.close()
 
     def get_file_path(self, file_name: str) -> Tuple[Path, Path]:
