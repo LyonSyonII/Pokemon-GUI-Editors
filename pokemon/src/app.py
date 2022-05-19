@@ -118,6 +118,14 @@ class Window(QMainWindow, Ui_MainWindow):
             self.spin_sp_atk.setValue(pkm.get("sp_atk", 0))
             self.spin_sp_def.setValue(pkm.get("sp_def", 0))
             self.spin_spd.setValue(pkm.get("speed", 0))
+            # Add miscellaneous
+            self.spin_growth.setValue(pkm.get("growth", 100))
+            self.spin_gender.setValue(pkm.get("gender", 50))
+            self.spin_xp.setValue(pkm.get("base_xp", 30))
+            self.spin_weight.setValue(pkm.get("weight", 0))
+            self.spin_height.setValue(pkm.get("height", 0))
+            self.spin_pokedex.setValue(pkm.get("pokedex_num", 0))
+            self.text_description.setText(pkm.get("pokedex", ""))
             # Remove current moves
             for _ in range(self.tree_moves.topLevelItemCount()):
                 self.tree_moves.takeTopLevelItem(0)
@@ -128,10 +136,8 @@ class Window(QMainWindow, Ui_MainWindow):
             for _ in range(self.tree_evolutions.topLevelItemCount()):
                 self.tree_evolutions.takeTopLevelItem(0)
             # Add new evolutions
-            for evolution in pkm["evolutions"]:
-                self.add_evolution_item(
-                    evolution["pkm"], evolution["method"], evolution.get("value")
-                )
+            for evo in pkm["evolutions"]:
+                self.add_evolution_item(evo["pkm"], evo["method"], evo.get("value"))
 
     def add_move_item(self, level: int = 1, move: str | None = None):
         # Get current item
@@ -289,6 +295,13 @@ class Window(QMainWindow, Ui_MainWindow):
                         )
                     ],
                     "evolutions": self.get_evolutions(),
+                    "growth_rate": self.spin_growth.value(),
+                    "gender_rate": self.spin_growth.value(),
+                    "base_xp": self.spin_xp.value(),
+                    "weight": self.spin_weight.value(),
+                    "height": self.spin_height.value(),
+                    "pokedex_num": self.spin_pokedex.value(),
+                    "pokedex": self.text_description.toPlainText(),
                 }
             }
         )
