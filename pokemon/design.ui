@@ -90,7 +90,7 @@
         </property>
         <layout class="QGridLayout" name="gridLayout">
          <item row="3" column="2">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget1" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -137,7 +137,7 @@
           </widget>
          </item>
          <item row="0" column="0" colspan="3">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget2" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -272,7 +272,7 @@
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget3" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -340,7 +340,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget4" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -411,7 +411,7 @@
           </widget>
          </item>
          <item row="1" column="2">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget10" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -479,7 +479,7 @@
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget5" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -526,7 +526,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget6" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -573,7 +573,7 @@
           </widget>
          </item>
          <item row="2" column="2">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget7" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -620,7 +620,7 @@
           </widget>
          </item>
          <item row="3" column="0">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget8" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -667,7 +667,7 @@
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QWidget" name="" native="true">
+          <widget class="QWidget" name="widget9" native="true">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -719,7 +719,7 @@
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_moves">
          <attribute name="title">
@@ -750,7 +750,7 @@
              <bool>false</bool>
             </property>
             <property name="sortingEnabled">
-             <bool>true</bool>
+             <bool>false</bool>
             </property>
             <property name="expandsOnDoubleClick">
              <bool>false</bool>
@@ -822,6 +822,112 @@
          <attribute name="title">
           <string>Evolutions</string>
          </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <item>
+           <widget class="QTreeWidget" name="tree_evolutions">
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
+            <property name="showDropIndicator" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectItems</enum>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>false</bool>
+            </property>
+            <property name="uniformRowHeights">
+             <bool>true</bool>
+            </property>
+            <property name="itemsExpandable">
+             <bool>false</bool>
+            </property>
+            <property name="sortingEnabled">
+             <bool>false</bool>
+            </property>
+            <property name="expandsOnDoubleClick">
+             <bool>false</bool>
+            </property>
+            <attribute name="headerCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="headerHighlightSections">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="headerStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>Pokémon</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Method</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Value</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QPushButton" name="button_add_evolution">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {color: #0dff00;}</string>
+              </property>
+              <property name="text">
+               <string>+</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="button_remove_evolution">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                <strikeout>false</strikeout>
+                <kerning>false</kerning>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+	color: rgb(255, 0, 4);
+	text-align: center
+}</string>
+              </property>
+              <property name="text">
+               <string>-</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
         <widget class="QWidget" name="tab_misc">
          <attribute name="title">

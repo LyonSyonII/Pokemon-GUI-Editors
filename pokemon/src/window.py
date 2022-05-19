@@ -110,19 +110,19 @@ class Ui_MainWindow(object):
         self.stats.setFont(font1)
         self.gridLayout = QGridLayout(self.stats)
         self.gridLayout.setObjectName("gridLayout")
-        self.widget = QWidget(self.stats)
-        self.widget.setObjectName("widget")
-        self.widget.setMaximumSize(QSize(16777215, 80))
-        self.verticalLayout_13 = QVBoxLayout(self.widget)
+        self.widget1 = QWidget(self.stats)
+        self.widget1.setObjectName("widget1")
+        self.widget1.setMaximumSize(QSize(16777215, 80))
+        self.verticalLayout_13 = QVBoxLayout(self.widget1)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.z_label_12 = QLabel(self.widget)
+        self.z_label_12 = QLabel(self.widget1)
         self.z_label_12.setObjectName("z_label_12")
         self.z_label_12.setMaximumSize(QSize(16777215, 22))
         self.z_label_12.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_13.addWidget(self.z_label_12)
 
-        self.spin_spd = QSpinBox(self.widget)
+        self.spin_spd = QSpinBox(self.widget1)
         self.spin_spd.setObjectName("spin_spd")
         self.spin_spd.setAlignment(Qt.AlignCenter)
         self.spin_spd.setMinimum(1)
@@ -132,16 +132,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13.addWidget(self.spin_spd)
 
-        self.gridLayout.addWidget(self.widget, 3, 2, 1, 1)
+        self.gridLayout.addWidget(self.widget1, 3, 2, 1, 1)
 
-        self.widget1 = QWidget(self.stats)
-        self.widget1.setObjectName("widget1")
-        self.widget1.setMaximumSize(QSize(16777215, 80))
-        self.horizontalLayout_4 = QHBoxLayout(self.widget1)
+        self.widget2 = QWidget(self.stats)
+        self.widget2.setObjectName("widget2")
+        self.widget2.setMaximumSize(QSize(16777215, 80))
+        self.horizontalLayout_4 = QHBoxLayout(self.widget2)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.z_label_2 = QLabel(self.widget1)
+        self.z_label_2 = QLabel(self.widget2)
         self.z_label_2.setObjectName("z_label_2")
         self.z_label_2.setMinimumSize(QSize(0, 22))
         self.z_label_2.setMaximumSize(QSize(16777215, 22))
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addWidget(self.z_label_2)
 
-        self.combo_type1 = QComboBox(self.widget1)
+        self.combo_type1 = QComboBox(self.widget2)
         self.combo_type1.setObjectName("combo_type1")
         sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4 = QVBoxLayout()
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.z_label_4 = QLabel(self.widget1)
+        self.z_label_4 = QLabel(self.widget2)
         self.z_label_4.setObjectName("z_label_4")
         self.z_label_4.setMinimumSize(QSize(0, 22))
         self.z_label_4.setMaximumSize(QSize(16777215, 22))
@@ -175,7 +175,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.z_label_4)
 
-        self.combo_type2 = QComboBox(self.widget1)
+        self.combo_type2 = QComboBox(self.widget2)
         self.combo_type2.setObjectName("combo_type2")
         sizePolicy1.setHeightForWidth(self.combo_type2.sizePolicy().hasHeightForWidth())
         self.combo_type2.setSizePolicy(sizePolicy1)
@@ -189,14 +189,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addLayout(self.verticalLayout_4)
 
-        self.gridLayout.addWidget(self.widget1, 0, 0, 1, 3)
+        self.gridLayout.addWidget(self.widget2, 0, 0, 1, 3)
 
-        self.widget2 = QWidget(self.stats)
-        self.widget2.setObjectName("widget2")
-        self.widget2.setMaximumSize(QSize(16777215, 80))
-        self.verticalLayout_5 = QVBoxLayout(self.widget2)
+        self.widget3 = QWidget(self.stats)
+        self.widget3.setObjectName("widget3")
+        self.widget3.setMaximumSize(QSize(16777215, 80))
+        self.verticalLayout_5 = QVBoxLayout(self.widget3)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.z_label = QLabel(self.widget2)
+        self.z_label = QLabel(self.widget3)
         self.z_label.setObjectName("z_label")
         self.z_label.setMinimumSize(QSize(0, 22))
         self.z_label.setMaximumSize(QSize(16777215, 22))
@@ -204,7 +204,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.z_label)
 
-        self.combo_ability1 = QComboBox(self.widget2)
+        self.combo_ability1 = QComboBox(self.widget3)
         self.combo_ability1.setObjectName("combo_ability1")
         sizePolicy1.setHeightForWidth(
             self.combo_ability1.sizePolicy().hasHeightForWidth()
@@ -217,14 +217,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.combo_ability1)
 
-        self.gridLayout.addWidget(self.widget2, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.widget3, 1, 0, 1, 1)
 
-        self.widget3 = QWidget(self.stats)
-        self.widget3.setObjectName("widget3")
-        self.widget3.setMaximumSize(QSize(16777215, 80))
-        self.verticalLayout_6 = QVBoxLayout(self.widget3)
+        self.widget4 = QWidget(self.stats)
+        self.widget4.setObjectName("widget4")
+        self.widget4.setMaximumSize(QSize(16777215, 80))
+        self.verticalLayout_6 = QVBoxLayout(self.widget4)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.z_label_5 = QLabel(self.widget3)
+        self.z_label_5 = QLabel(self.widget4)
         self.z_label_5.setObjectName("z_label_5")
         self.z_label_5.setMinimumSize(QSize(0, 22))
         self.z_label_5.setMaximumSize(QSize(16777215, 22))
@@ -232,7 +232,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.z_label_5)
 
-        self.combo_ability2 = QComboBox(self.widget3)
+        self.combo_ability2 = QComboBox(self.widget4)
         self.combo_ability2.setObjectName("combo_ability2")
         sizePolicy1.setHeightForWidth(
             self.combo_ability2.sizePolicy().hasHeightForWidth()
@@ -246,14 +246,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.combo_ability2)
 
-        self.gridLayout.addWidget(self.widget3, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.widget4, 1, 1, 1, 1)
 
-        self.widget4 = QWidget(self.stats)
-        self.widget4.setObjectName("widget4")
-        self.widget4.setMaximumSize(QSize(16777215, 80))
-        self.verticalLayout_7 = QVBoxLayout(self.widget4)
+        self.widget10 = QWidget(self.stats)
+        self.widget10.setObjectName("widget10")
+        self.widget10.setMaximumSize(QSize(16777215, 80))
+        self.verticalLayout_7 = QVBoxLayout(self.widget10)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.z_label_6 = QLabel(self.widget4)
+        self.z_label_6 = QLabel(self.widget10)
         self.z_label_6.setObjectName("z_label_6")
         self.z_label_6.setMinimumSize(QSize(0, 22))
         self.z_label_6.setMaximumSize(QSize(16777215, 22))
@@ -261,7 +261,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.z_label_6)
 
-        self.combo_ability3 = QComboBox(self.widget4)
+        self.combo_ability3 = QComboBox(self.widget10)
         self.combo_ability3.setObjectName("combo_ability3")
         sizePolicy1.setHeightForWidth(
             self.combo_ability3.sizePolicy().hasHeightForWidth()
@@ -274,7 +274,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.combo_ability3)
 
-        self.gridLayout.addWidget(self.widget4, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.widget10, 1, 2, 1, 1)
 
         self.widget5 = QWidget(self.stats)
         self.widget5.setObjectName("widget5")
@@ -413,7 +413,7 @@ class Ui_MainWindow(object):
         self.tree_moves.setRootIsDecorated(False)
         self.tree_moves.setUniformRowHeights(True)
         self.tree_moves.setItemsExpandable(False)
-        self.tree_moves.setSortingEnabled(True)
+        self.tree_moves.setSortingEnabled(False)
         self.tree_moves.setExpandsOnDoubleClick(False)
 
         self.verticalLayout.addWidget(self.tree_moves)
@@ -451,6 +451,47 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_moves, "")
         self.tab_evolutions = QWidget()
         self.tab_evolutions.setObjectName("tab_evolutions")
+        self.verticalLayout_14 = QVBoxLayout(self.tab_evolutions)
+        self.verticalLayout_14.setObjectName("verticalLayout_14")
+        self.tree_evolutions = QTreeWidget(self.tab_evolutions)
+        self.tree_evolutions.setObjectName("tree_evolutions")
+        self.tree_evolutions.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.tree_evolutions.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.tree_evolutions.setProperty("showDropIndicator", False)
+        self.tree_evolutions.setSelectionBehavior(QAbstractItemView.SelectItems)
+        self.tree_evolutions.setRootIsDecorated(False)
+        self.tree_evolutions.setUniformRowHeights(True)
+        self.tree_evolutions.setItemsExpandable(False)
+        self.tree_evolutions.setSortingEnabled(False)
+        self.tree_evolutions.setExpandsOnDoubleClick(False)
+        self.tree_evolutions.header().setCascadingSectionResizes(False)
+        self.tree_evolutions.header().setHighlightSections(False)
+        self.tree_evolutions.header().setStretchLastSection(True)
+
+        self.verticalLayout_14.addWidget(self.tree_evolutions)
+
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.button_add_evolution = QPushButton(self.tab_evolutions)
+        self.button_add_evolution.setObjectName("button_add_evolution")
+        self.button_add_evolution.setFont(font2)
+        self.button_add_evolution.setStyleSheet("QPushButton {color: #0dff00;}")
+        self.button_add_evolution.setCheckable(False)
+
+        self.horizontalLayout_5.addWidget(self.button_add_evolution)
+
+        self.button_remove_evolution = QPushButton(self.tab_evolutions)
+        self.button_remove_evolution.setObjectName("button_remove_evolution")
+        self.button_remove_evolution.setFont(font3)
+        self.button_remove_evolution.setStyleSheet(
+            "QPushButton {\n" "	color: rgb(255, 0, 4);\n" "	text-align: center\n" "}"
+        )
+        self.button_remove_evolution.setCheckable(False)
+
+        self.horizontalLayout_5.addWidget(self.button_remove_evolution)
+
+        self.verticalLayout_14.addLayout(self.horizontalLayout_5)
+
         self.tabWidget.addTab(self.tab_evolutions, "")
         self.tab_misc = QWidget()
         self.tab_misc.setObjectName("tab_misc")
@@ -503,7 +544,7 @@ class Ui_MainWindow(object):
         self.combo_ability1.setCurrentIndex(-1)
         self.combo_ability2.setCurrentIndex(-1)
         self.combo_ability3.setCurrentIndex(-1)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
         QMetaObject.connectSlotsByName(MainWindow)
 
@@ -605,6 +646,22 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(
             self.tabWidget.indexOf(self.tab_moves),
             QCoreApplication.translate("MainWindow", "Moves", None),
+        )
+        ___qtreewidgetitem1 = self.tree_evolutions.headerItem()
+        ___qtreewidgetitem1.setText(
+            2, QCoreApplication.translate("MainWindow", "Value", None)
+        )
+        ___qtreewidgetitem1.setText(
+            1, QCoreApplication.translate("MainWindow", "Method", None)
+        )
+        ___qtreewidgetitem1.setText(
+            0, QCoreApplication.translate("MainWindow", "Pok\u00e9mon", None)
+        )
+        self.button_add_evolution.setText(
+            QCoreApplication.translate("MainWindow", "+", None)
+        )
+        self.button_remove_evolution.setText(
+            QCoreApplication.translate("MainWindow", "-", None)
         )
         self.tabWidget.setTabText(
             self.tabWidget.indexOf(self.tab_evolutions),

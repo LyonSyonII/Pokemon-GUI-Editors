@@ -3,7 +3,7 @@ from os import path
 from typing import Any, Tuple
 from pathlib import Path
 
-import rtoml
+import rtoml as toml
 from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog
 from window import Ui_MainWindow
 
@@ -33,7 +33,7 @@ class Window(Ui_MainWindow, QMainWindow):
         (self.root_path, self.moves_path) = self.get_file_path("moves.toml.bytes")
 
         # Load moves.toml
-        self.moves_parse = rtoml.load(self.moves_path)
+        self.moves_parse = toml.load(self.moves_path)
         self.moves_parse.setdefault("Moves", {})
         self.moves = self.moves_parse["Moves"]
 
@@ -42,7 +42,7 @@ class Window(Ui_MainWindow, QMainWindow):
         self.combo_name.addItems(list(items))
         # Add existing types to the "Type 1" and "Type 2" entries
         types_path = self.get_file_path("types.toml.bytes")[1]
-        if types := rtoml.load(types_path).get("Types"):
+        if types := toml.load(types_path).get("Types"):
             self.combo_type1.addItems(types.keys())
             self.combo_type2.addItems(types.keys())
 
@@ -131,7 +131,7 @@ class Window(Ui_MainWindow, QMainWindow):
         self.combo_name.addItem(self.combo_name.currentText())
         # Save move to file
         with open(self.moves_path, "w", encoding="utf-8") as file:
-            print(rtoml.dump(self.moves_parse, file))
+            print(toml.dump(self.moves_parse, file))
             file.close()
 
     def get_file_path(self, file_name: str) -> Tuple[Path, Path]:

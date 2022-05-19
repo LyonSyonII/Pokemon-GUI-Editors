@@ -1,10 +1,21 @@
+from pathlib import Path
+from copy import deepcopy
 import rtoml as toml
 
 
-moves = toml.load("moves.toml.bytes")
-move = moves["Moves"]["Tackle"]
+parse = toml.load(Path("moves.toml.bytes"))
+moves = parse["Moves"]
+move = moves["Tackle"]
 
 for i in range(100000):
-    copy = move.copy()
-    copy["name"] = f"Tackle{i}"
-    moves.update(move)
+    copy = deepcopy(move)
+    if i % 1000 != 0:
+        continue
+
+    copy["name"] = f"Tackle_{i}"
+    moves[f"Tackle_{i}"] = copy
+
+with open("moves.toml.bytes", "w") as f:
+    f.truncate(0)
+    toml.dump(parse, f, pretty=True)
+    f.close()
