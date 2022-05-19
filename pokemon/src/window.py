@@ -312,15 +312,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.z_label_9)
 
-        self.spin_defense = QSpinBox(self.widget6)
-        self.spin_defense.setObjectName("spin_defense")
-        self.spin_defense.setAlignment(Qt.AlignCenter)
-        self.spin_defense.setMinimum(1)
-        self.spin_defense.setMaximum(255)
-        self.spin_defense.setSingleStep(5)
-        self.spin_defense.setValue(100)
+        self.spin_def = QSpinBox(self.widget6)
+        self.spin_def.setObjectName("spin_defense")
+        self.spin_def.setAlignment(Qt.AlignCenter)
+        self.spin_def.setMinimum(1)
+        self.spin_def.setMaximum(255)
+        self.spin_def.setSingleStep(5)
+        self.spin_def.setValue(100)
 
-        self.verticalLayout_9.addWidget(self.spin_defense)
+        self.verticalLayout_9.addWidget(self.spin_def)
 
         self.gridLayout.addWidget(self.widget6, 2, 1, 1, 1)
 
@@ -525,8 +525,8 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.combo_ability1, self.combo_ability2)
         QWidget.setTabOrder(self.combo_ability2, self.combo_ability3)
         QWidget.setTabOrder(self.combo_ability3, self.spin_hp)
-        QWidget.setTabOrder(self.spin_hp, self.spin_defense)
-        QWidget.setTabOrder(self.spin_defense, self.spin_sp_def)
+        QWidget.setTabOrder(self.spin_hp, self.spin_def)
+        QWidget.setTabOrder(self.spin_def, self.spin_sp_def)
         QWidget.setTabOrder(self.spin_sp_def, self.spin_atk)
         QWidget.setTabOrder(self.spin_atk, self.spin_sp_atk)
         QWidget.setTabOrder(self.spin_sp_atk, self.spin_spd)

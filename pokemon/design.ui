@@ -312,7 +312,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>0</width>
+                <width>150</width>
                 <height>32</height>
                </size>
               </property>
@@ -380,7 +380,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>0</width>
+                <width>150</width>
                 <height>32</height>
                </size>
               </property>
@@ -451,7 +451,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>0</width>
+                <width>150</width>
                 <height>32</height>
                </size>
               </property>
@@ -551,7 +551,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QSpinBox" name="spin_defense">
+             <widget class="QSpinBox" name="spin_def">
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
@@ -982,7 +982,7 @@
   <tabstop>combo_ability2</tabstop>
   <tabstop>combo_ability3</tabstop>
   <tabstop>spin_hp</tabstop>
-  <tabstop>spin_defense</tabstop>
+  <tabstop>spin_def</tabstop>
   <tabstop>spin_sp_def</tabstop>
   <tabstop>spin_atk</tabstop>
   <tabstop>spin_sp_atk</tabstop>

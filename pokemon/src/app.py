@@ -60,7 +60,7 @@ class Window(QMainWindow, Ui_MainWindow):
         (self.root_path, self.pkm_path) = self.get_file_path("pokemon.toml.bytes")
 
         # Load pokemon.toml
-        self.pkm_parse = toml.load(self.pkm_path)
+        self.pkm_parse = self.load_toml(self.pkm_path)
         self.pkm_parse.setdefault("Pokemon", {})
         self.pkm = self.pkm_parse["Pokemon"]
 
@@ -70,12 +70,12 @@ class Window(QMainWindow, Ui_MainWindow):
 
         # Save existing moves for later entries
         moves_path = self.get_file_path("moves.toml.bytes")[1]
-        moves: KeysView[str] = toml.load(moves_path).get("Moves", {}).keys()
+        moves: KeysView[str] = self.load_toml(moves_path).get("Moves", {}).keys()
         self.move_items = [under_to_space(move) for move in moves]
 
         # Save existing items for later entries
         items_path = self.get_file_path("items.toml.bytes")[1]
-        items: KeysView[str] = toml.load(items_path).get("Items", {}).keys()
+        items: KeysView[str] = self.load_toml(items_path).get("Items", {}).keys()
         self.item_items = [under_to_space(item) for item in items]
 
         # Add existing abilities to the corresponding entries
@@ -90,7 +90,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
         # Add existing types to the "Type 1" and "Type 2" entries
         types_path = self.get_file_path("types.toml.bytes")[1]
-        if types := toml.load(types_path).get("Types"):
+        if types := self.load_toml(types_path).get("Types"):
             self.combo_type1.addItems(types.keys())
             self.combo_type2.addItems(types.keys())
 
@@ -107,12 +107,17 @@ class Window(QMainWindow, Ui_MainWindow):
         text = self.combo_name.currentText()
         # If move is found in dictionary
         if pkm := self.pkm.get(text.replace(" ", "_")):
+            # Add types
             self.combo_type1.setCurrentText(pkm["type1"])
             self.combo_type2.setCurrentText(pkm["type2"])
+            # Add abilities
+            self.combo_ability1.setCurrentText(pkm["first"])
+            self.combo_ability2.setCurrentText(pkm["second"])
+            self.combo_ability3.setCurrentText(pkm["hidden"])
             # Add stats
             self.spin_hp.setValue(pkm.get("hp", 0))
             self.spin_atk.setValue(pkm.get("atk", 0))
-            self.spin_defense.setValue(pkm.get("def", 0))
+            self.spin_def.setValue(pkm.get("def", 0))
             self.spin_sp_atk.setValue(pkm.get("sp_atk", 0))
             self.spin_sp_def.setValue(pkm.get("sp_def", 0))
             self.spin_spd.setValue(pkm.get("speed", 0))
@@ -122,6 +127,14 @@ class Window(QMainWindow, Ui_MainWindow):
             # Add new moves
             for move in pkm["moves"]:
                 self.add_move_item(move["lvl"], move["move"])
+            # Remove current evolutions
+            for _ in range(self.tree_evolutions.topLevelItemCount()):
+                self.tree_evolutions.takeTopLevelItem(0)
+            # Add new evolutions
+            for evolution in pkm["evolutions"]:
+                self.add_evolution_item(
+                    evolution["pkm"], evolution["method"], evolution.get("value")
+                )
 
     def add_move_item(self, level: int = 1, move: str | None = None):
         # Get current item
@@ -146,7 +159,12 @@ class Window(QMainWindow, Ui_MainWindow):
         self.tree_moves.setItemWidget(self.tree_moves.topLevelItem(i), 0, spin_level)
         self.tree_moves.setItemWidget(self.tree_moves.topLevelItem(i), 1, combo_move)
 
-    def add_evolution_item(self, pkm: str | None = None, evo_method: str | None = None):
+    def add_evolution_item(
+        self,
+        pkm: str | None = None,
+        evo_method: str | None = None,
+        value: str | None = None,
+    ):
         # Get current item
         i = self.tree_evolutions.topLevelItemCount()
         # Create pokemon combobox with the needed properties
@@ -159,7 +177,6 @@ class Window(QMainWindow, Ui_MainWindow):
         combo_pkm.addItems(self.pkm_items)
         if pkm:
             combo_pkm.setCurrentText(pkm)
-
         # Create evolution method combobox with the needed properties
         combo_method = ComboBox()
         combo_method.setEditable(True)
@@ -170,25 +187,23 @@ class Window(QMainWindow, Ui_MainWindow):
         if evo_method:
             combo_method.setCurrentText(evo_method)
         else:
-            combo_method.setCurrentIndex(0)
+            combo_method.setCurrentText("Level")
         combo_method.currentTextChanged.connect(self.update_evolution_tree)  # type: ignore
-
         # Add both to the tree
         tree_item = QTreeWidgetItem()
         self.tree_evolutions.insertTopLevelItem(i, tree_item)
         self.tree_evolutions.setItemWidget(tree_item, 0, combo_pkm)
         self.tree_evolutions.setItemWidget(tree_item, 1, combo_method)
-        widget_value = self.get_evo_method_widget(combo_method.currentIndex())
+        widget_value = self.get_evo_method_widget(combo_method.currentText(), value)
         if widget_value:
             self.tree_evolutions.setItemWidget(tree_item, 2, widget_value)
 
     def get_evo_method_widget(
-        self, method: int, value: int | str | None = None
+        self, method: str, value: int | str | None = None
     ) -> QWidget | None:
         widget_value: QWidget | None = None
         match method:
-            # Level
-            case 0:
+            case "Level":
                 widget_value = SpinBox()
                 widget_value.setMinimum(0)
                 widget_value.setMaximum(100)
@@ -197,8 +212,7 @@ class Window(QMainWindow, Ui_MainWindow):
                     widget_value.setValue(int(value))
                 else:
                     widget_value.setValue(1)
-            # Item
-            case 1:
+            case "Item":
                 widget_value = ComboBox()
                 widget_value.setEditable(True)
                 widget_value.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
@@ -213,14 +227,35 @@ class Window(QMainWindow, Ui_MainWindow):
     def update_evolution_tree(self):
         current_item = self.tree_evolutions.currentItem()
         # Get current evolution method index (0 => level, 1 => item, 2 => custom)
-        method: int = self.tree_evolutions.itemWidget(current_item, 1).currentIndex()  # type: ignore
+        method: str = self.tree_evolutions.itemWidget(current_item, 1).currentText()  # type: ignore
         # Get corresponding widget based on the method
         widget: QWidget | None = self.get_evo_method_widget(method)
-        # If function returns widget, add it to the tree
+        # If function returns a widget, add it to the tree
         if widget:
             self.tree_evolutions.setItemWidget(current_item, 2, widget)
         else:
             self.tree_evolutions.removeItemWidget(current_item, 2)
+
+    def get_evolutions(self):
+        tree_evolutions_items: list[QTreeWidgetItem] = [
+            self.tree_evolutions.topLevelItem(i)
+            for i in range(self.tree_evolutions.topLevelItemCount())
+        ]
+        evolutions = []
+        for item in tree_evolutions_items:
+            pkm = self.tree_evolutions.itemWidget(item, 0).currentText()  # type: ignore
+            method = self.tree_evolutions.itemWidget(item, 1).currentText()  # type: ignore
+            value = None
+            match method:
+                case "Level":
+                    value = self.tree_evolutions.itemWidget(item, 2).value()  # type: ignore
+                case "Item":
+                    value = self.tree_evolutions.itemWidget(item, 2).currentText()  # type: ignore
+            evo = {"pkm": pkm, "method": method}
+            if value:
+                evo["value"] = value
+            evolutions.append(evo)
+        return evolutions
 
     def remove_tree_item(self, tree: QTreeWidget):
         i = tree.currentIndex().row()
@@ -230,20 +265,22 @@ class Window(QMainWindow, Ui_MainWindow):
             tree.takeTopLevelItem(tree.currentIndex().row())
 
     def save_poke(self):
-        # Update move definition (if it does not exist it will be created)
-        # tree_moves_items: list[] = self.tree_moves.findItems("*", Qt.MatchWildcard)  # type: ignore
-
-        tree_evolutions_items: list[QTreeWidgetItem] = [
-            self.tree_evolutions.topLevelItem(i)
-            for i in range(self.tree_evolutions.topLevelItemCount())
-        ]
-
+        # Update Pokemon definition (if it does not exist it will be created)
         self.pkm.update(
             {
                 self.combo_name.currentText().replace(" ", "_"): {
                     "name": self.combo_name.currentText(),
                     "type1": self.combo_type1.currentText(),
                     "type2": self.combo_type2.currentText(),
+                    "first": self.combo_ability1.currentText(),
+                    "second": self.combo_ability2.currentText(),
+                    "hidden": self.combo_ability3.currentText(),
+                    "hp": self.spin_hp.value(),
+                    "atk": self.spin_atk.value(),
+                    "def": self.spin_def.value(),
+                    "sp_atk": self.spin_sp_atk.value(),
+                    "sp_def": self.spin_sp_def.value(),
+                    "speed": self.spin_spd.value(),
                     "moves": [
                         {
                             "lvl": spin_level.value(),
@@ -254,24 +291,15 @@ class Window(QMainWindow, Ui_MainWindow):
                             self.tree_moves.findChildren(ComboBox),
                         )
                     ],
-                    "evolutions": [
-                        {
-                            "pkm": self.tree_evolutions.itemWidget(item, 0).currentText(),  # type: ignore
-                            "method": self.tree_evolutions.itemWidget(item, 1).currentText(),  # type: ignore
-                            "value": self.tree_evolutions.itemWidget(item, 2).value(),
-                        }
-                        for item in tree_evolutions_items
-                    ],
+                    "evolutions": self.get_evolutions(),
                 }
             }
         )
-        print(self.pkm)
-        # Save move to file
-        print(toml.dumps(self.pkm_parse, pretty=False))
-        # with open(self.pkm_path, "w", encoding="utf-8") as file:
-
-        # print(toml.dump(self.pkm_parse, file, pretty=True))
-        #    file.close()
+        # Save Pokemon to file
+        print(toml_w.dumps(self.pkm_parse))
+        with open(self.pkm_path, "wb") as file:
+            toml_w.dump(self.pkm_parse, file)
+            file.close()
 
     def get_file_path(self, file_name: str) -> Tuple[Path, Path]:
         path = self.root_path / file_name
